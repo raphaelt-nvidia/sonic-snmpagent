@@ -70,6 +70,7 @@ class TestSonicMIB(TestCase):
         )
 
         response = get_pdu.make_response(self.lut)
+        print(response)
 
         value0 = response.values[0]
         self.assertEqual(value0.type_, ValueType.INTEGER)

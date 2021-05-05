@@ -60,5 +60,4 @@ class SystemUtilizationHandler(MIBUpdater):
 
         logger.debug('Updating CPU/Mem Utilization with: {}% / {}%'.format(cpu_util, self.get_memutil()))
 
-
 sys_util_h = SystemUtilizationHandler()

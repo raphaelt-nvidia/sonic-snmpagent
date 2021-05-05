@@ -294,7 +294,7 @@ def init_sync_d_lag_tables(db_conn):
     """
     Helper method. Connects to and initializes LAG interface maps for SyncD-connected MIB(s).
     :param db_conn: database connector
-    :return: tuple(lag_name_if_name_map, if_name_lag_name_map, oid_lag_name_map)
+    :return: tuple(lag_name_if_name_map, if_name_lag_name_map, oid_lag_name_map, lag_sai_map, sai_lag_map)
     """
     # { lag_name (SONiC) -> [ lag_members (if_name) ] }
     # ex: { "PortChannel0" : [ "Ethernet0", "Ethernet4" ] }
@@ -343,7 +343,7 @@ def init_sync_d_lag_tables(db_conn):
         if idx:
             oid_lag_name_map[idx] = if_name
 
-    return lag_name_if_name_map, if_name_lag_name_map, oid_lag_name_map, sai_lag_map
+    return lag_name_if_name_map, if_name_lag_name_map, oid_lag_name_map, lag_sai_map, sai_lag_map
 
 def init_sync_d_queue_tables(db_conn):
     """

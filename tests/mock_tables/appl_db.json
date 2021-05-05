@@ -652,6 +652,9 @@
   "LAG_MEMBER_TABLE:PortChannel04:Ethernet124": {
     "status": "enabled"
   },
+  "LAG_MEMBER_TABLE:PortChannel101:Ethernet128": {
+    "status": "enabled"
+  },
   "LAG_TABLE:PortChannel01": {
     "admin_status": "up",
     "oper_status": "up",
@@ -672,9 +675,19 @@
     "oper_status": "up",
     "mtu": "9216"
   },
+  "LAG_TABLE:PortChannel101": {
+    "admin_status": "up",
+    "oper_status": "up",
+    "mtu": "9216"
+  },
   "LAG_TABLE:PortChannel_Temp": {
     "admin_status": "up",
     "oper_status": "up",
+    "mtu": "9216"
+  },
+  "VLAN_TABLE:Vlan1000": {
+    "admin_status": "up",
+    "hostif_name": "",
     "mtu": "9216"
   },
   "INTF_TABLE:lo:10.1.0.32/32": {
