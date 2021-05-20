@@ -2,13 +2,16 @@ import os
 import sys
 import importlib
 
+# 3 directory levels above sonic-snmpagent/tests/namespace/test_interfaces.py = sonic-snmpagent
+modules_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Insert sonic-snmpagent and sonic-snmpagent/src to path 
+sys.path.insert(0, modules_path)
+sys.path.insert(0, os.path.join(modules_path, 'src'))
+from unittest import TestCase
+
 # noinspection PyUnresolvedReferences
 import tests.mock_tables.dbconnector
-
-modules_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(modules_path, 'src'))
-
-from unittest import TestCase
 
 from ax_interface import ValueType
 from ax_interface.pdu_implementations import GetPDU, GetNextPDU
@@ -237,7 +240,7 @@ class TestGetNextPDU_1213(TestCase):
         self.assertEqual(value0.data, 161)
 
     def test_getnextpdu_first_bp_ifindex(self):
-        oid = ObjectIdentifier(11, 0, 0, 0, (1, 3, 6, 1, 2, 1, 2, 2, 1, 1,1004))
+        oid = ObjectIdentifier(11, 0, 0, 0, (1, 3, 6, 1, 2, 1, 2, 2, 1, 1, 8999))
         get_pdu = GetNextPDU(
             header=PDUHeader(1, PduTypes.GET, 16, 0, 42, 0, 0, 0),
             oids=[oid]

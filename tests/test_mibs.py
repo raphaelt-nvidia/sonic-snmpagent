@@ -31,3 +31,4 @@ class TestGetNextPDU(TestCase):
 
         self.assertTrue("PortChannel_Temp" in lag_name_if_name_map)
         self.assertTrue(lag_name_if_name_map["PortChannel_Temp"] == [])
+        self.assertTrue(lag_sai_map["PortChannel01"] == "2000000000006")
